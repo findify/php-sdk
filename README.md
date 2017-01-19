@@ -1,7 +1,6 @@
 # Findify PHP SDK
 
-This is a PHP SDK for our JSON API, you can check full documentation here: https://developers.findify.io/
-
+This is a PHP SDK for our JSON API, you can check full documentation at [Findify Developer Portal](https://developers.findify.io/)
 
 ## Requirements
 
@@ -28,22 +27,18 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path-to-findify-sdk/autoload.php');
-```
-
-## Tests
-
-To run the unit tests:
-
-```
-composer install
-./vendor/bin/phpunit lib/Tests
+require_once('/path-to-findify-sdk/autoload.php');
 ```
 
 ## Getting Started
 
-Please visit [Findify Developer Portal](https://developers.findify.io) for the full API spec and guides.
+_Please visit [Findify Developer Portal](https://developers.findify.io) for the full API spec and guides._
 
+### Authentication
+
+Please check [Findify Developer Portal](https://developers.findify.io/reference#authentication) to get the API key
+
+### Requesting the API
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```php
@@ -117,6 +112,15 @@ Class | Method | HTTP request | Description
  - [SearchResponseMeta](docs/Model/SearchResponseMeta.md)
  - [Sort](docs/Model/Sort.md)
  - [User](docs/Model/User.md)
+ 
+## Running tests
+
+To run the unit tests:
+
+```
+composer install
+./vendor/bin/phpunit lib/Tests
+```
 
 ## Contributing
 
