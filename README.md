@@ -120,7 +120,7 @@ Class | Method | HTTP request | Description
 
 ## Contributing
 
-Feel free to create issues, send pull requests or contact as at yourfriends@findify.io!
+Feel free to create issues, send pull requests or contact us at yourfriends@findify.io!
 
 ## Licence
 
