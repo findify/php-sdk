@@ -1,0 +1,35 @@
+{
+    "name": "findify/sdk",
+    "description": "PHP SDK for Findify API",
+    "keywords": [
+        "findify",
+        "php",
+        "sdk",
+        "api"
+    ],
+    "homepage": "https://developers.findify.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Findify",
+            "homepage": "https://github.com/findify"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "satooshi/php-coveralls": "~1.0",
+        "squizlabs/php_codesniffer": "~2.6"
+    },
+    "autoload": {
+        "psr-4": { "Swagger\\Client\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Swagger\\Client\\" : "test/" }
+    }
+}
