@@ -57,6 +57,8 @@ class Facet implements ArrayAccess
         'name' => 'string',
         'type' => 'string',
         'sort_type' => 'string',
+        'min' => 'int',
+        'max' => 'int',
         'values' => '\Swagger\Client\Model\FacetChildValueOne[]'
     );
 
@@ -73,6 +75,8 @@ class Facet implements ArrayAccess
         'name' => 'name',
         'type' => 'type',
         'sort_type' => 'sort_type',
+        'min' => 'min',
+        'max' => 'max',
         'values' => 'values'
     );
 
@@ -89,6 +93,8 @@ class Facet implements ArrayAccess
         'name' => 'setName',
         'type' => 'setType',
         'sort_type' => 'setSortType',
+        'min' => 'setMin',
+        'max' => 'setMax',
         'values' => 'setValues'
     );
 
@@ -105,6 +111,8 @@ class Facet implements ArrayAccess
         'name' => 'getName',
         'type' => 'getType',
         'sort_type' => 'getSortType',
+        'min' => 'getMin',
+        'max' => 'getMax',
         'values' => 'getValues'
     );
 
@@ -164,6 +172,8 @@ class Facet implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['sort_type'] = isset($data['sort_type']) ? $data['sort_type'] : null;
+        $this->container['min'] = isset($data['min']) ? $data['min'] : null;
+        $this->container['max'] = isset($data['max']) ? $data['max'] : null;
         $this->container['values'] = isset($data['values']) ? $data['values'] : null;
     }
 
@@ -299,6 +309,48 @@ class Facet implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'sort_type', must be one of 'alphabetical', 'count', 'value'");
         }
         $this->container['sort_type'] = $sort_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets min
+     * @return int
+     */
+    public function getMin()
+    {
+        return $this->container['min'];
+    }
+
+    /**
+     * Sets min
+     * @param int $min
+     * @return $this
+     */
+    public function setMin($min)
+    {
+        $this->container['min'] = $min;
+
+        return $this;
+    }
+
+    /**
+     * Gets max
+     * @return int
+     */
+    public function getMax()
+    {
+        return $this->container['max'];
+    }
+
+    /**
+     * Sets max
+     * @param int $max
+     * @return $this
+     */
+    public function setMax($max)
+    {
+        $this->container['max'] = $max;
 
         return $this;
     }
