@@ -59,8 +59,6 @@ class FacetChildValueTwo implements ArrayAccess
         'count' => 'int',
         'name' => 'string',
         'has_children' => 'bool',
-        'min' => 'int',
-        'max' => 'int',
         'from' => 'int',
         'to' => 'int',
         'children' => '\Swagger\Client\Model\FacetChildValueThree[]'
@@ -81,8 +79,6 @@ class FacetChildValueTwo implements ArrayAccess
         'count' => 'count',
         'name' => 'name',
         'has_children' => 'has_children',
-        'min' => 'min',
-        'max' => 'max',
         'from' => 'from',
         'to' => 'to',
         'children' => 'children'
@@ -103,8 +99,6 @@ class FacetChildValueTwo implements ArrayAccess
         'count' => 'setCount',
         'name' => 'setName',
         'has_children' => 'setHasChildren',
-        'min' => 'setMin',
-        'max' => 'setMax',
         'from' => 'setFrom',
         'to' => 'setTo',
         'children' => 'setChildren'
@@ -125,8 +119,6 @@ class FacetChildValueTwo implements ArrayAccess
         'count' => 'getCount',
         'name' => 'getName',
         'has_children' => 'getHasChildren',
-        'min' => 'getMin',
-        'max' => 'getMax',
         'from' => 'getFrom',
         'to' => 'getTo',
         'children' => 'getChildren'
@@ -158,8 +150,6 @@ class FacetChildValueTwo implements ArrayAccess
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['has_children'] = isset($data['has_children']) ? $data['has_children'] : null;
-        $this->container['min'] = isset($data['min']) ? $data['min'] : null;
-        $this->container['max'] = isset($data['max']) ? $data['max'] : null;
         $this->container['from'] = isset($data['from']) ? $data['from'] : null;
         $this->container['to'] = isset($data['to']) ? $data['to'] : null;
         $this->container['children'] = isset($data['children']) ? $data['children'] : null;
@@ -319,48 +309,6 @@ class FacetChildValueTwo implements ArrayAccess
     public function setHasChildren($has_children)
     {
         $this->container['has_children'] = $has_children;
-
-        return $this;
-    }
-
-    /**
-     * Gets min
-     * @return int
-     */
-    public function getMin()
-    {
-        return $this->container['min'];
-    }
-
-    /**
-     * Sets min
-     * @param int $min
-     * @return $this
-     */
-    public function setMin($min)
-    {
-        $this->container['min'] = $min;
-
-        return $this;
-    }
-
-    /**
-     * Gets max
-     * @return int
-     */
-    public function getMax()
-    {
-        return $this->container['max'];
-    }
-
-    /**
-     * Sets max
-     * @param int $max
-     * @return $this
-     */
-    public function setMax($max)
-    {
-        $this->container['max'] = $max;
 
         return $this;
     }

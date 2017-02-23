@@ -124,22 +124,6 @@ class FacetChildValueFourTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "min"
-     */
-    public function testPropertyMin()
-    {
-
-    }
-
-    /**
-     * Test attribute "max"
-     */
-    public function testPropertyMax()
-    {
-
-    }
-
-    /**
      * Test attribute "from"
      */
     public function testPropertyFrom()
