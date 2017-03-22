@@ -70,8 +70,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**autocompletePost**](docs/Api/DefaultApi.md#autocompletepost) | **POST** /autocomplete | 
 *DefaultApi* | [**feedbackPost**](docs/Api/DefaultApi.md#feedbackpost) | **POST** /feedback | 
 *DefaultApi* | [**recommendItemsFeaturedPost**](docs/Api/DefaultApi.md#recommenditemsfeaturedpost) | **POST** /recommend/items/featured | 
-*DefaultApi* | [**recommendItemsItemIdViewedBoughtPost**](docs/Api/DefaultApi.md#recommenditemsitemidviewedboughtpost) | **POST** /recommend/items/{item_id}/viewed/bought | 
 *DefaultApi* | [**recommendItemsItemIdViewedViewedPost**](docs/Api/DefaultApi.md#recommenditemsitemidviewedviewedpost) | **POST** /recommend/items/{item_id}/viewed/viewed | 
+*DefaultApi* | [**recommendItemsItemIdsBoughtBoughtPost**](docs/Api/DefaultApi.md#recommenditemsitemidsboughtboughtpost) | **POST** /recommend/items/{item_ids}/bought/bought | 
 *DefaultApi* | [**recommendItemsNewestPost**](docs/Api/DefaultApi.md#recommenditemsnewestpost) | **POST** /recommend/items/newest | 
 *DefaultApi* | [**recommendItemsTrendingPost**](docs/Api/DefaultApi.md#recommenditemstrendingpost) | **POST** /recommend/items/trending | 
 *DefaultApi* | [**recommendItemsViewedLatestPost**](docs/Api/DefaultApi.md#recommenditemsviewedlatestpost) | **POST** /recommend/items/viewed/latest | 

@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rid** | **string** |  | 
 **item_id** | **string** |  | [optional] 
+**item_ids** | **string[]** |  | [optional] 
 **user_id** | **string** |  | [optional] 
 **limit** | **int** |  | 
 **offset** | **int** |  | 
