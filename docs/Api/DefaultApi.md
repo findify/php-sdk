@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**autocompletePost**](DefaultApi.md#autocompletePost) | **POST** /autocomplete | 
 [**feedbackPost**](DefaultApi.md#feedbackPost) | **POST** /feedback | 
 [**recommendItemsFeaturedPost**](DefaultApi.md#recommendItemsFeaturedPost) | **POST** /recommend/items/featured | 
-[**recommendItemsItemIdViewedBoughtPost**](DefaultApi.md#recommendItemsItemIdViewedBoughtPost) | **POST** /recommend/items/{item_id}/viewed/bought | 
 [**recommendItemsItemIdViewedViewedPost**](DefaultApi.md#recommendItemsItemIdViewedViewedPost) | **POST** /recommend/items/{item_id}/viewed/viewed | 
+[**recommendItemsItemIdsBoughtBoughtPost**](DefaultApi.md#recommendItemsItemIdsBoughtBoughtPost) | **POST** /recommend/items/{item_ids}/bought/bought | 
 [**recommendItemsNewestPost**](DefaultApi.md#recommendItemsNewestPost) | **POST** /recommend/items/newest | 
 [**recommendItemsTrendingPost**](DefaultApi.md#recommendItemsTrendingPost) | **POST** /recommend/items/trending | 
 [**recommendItemsViewedLatestPost**](DefaultApi.md#recommendItemsViewedLatestPost) | **POST** /recommend/items/viewed/latest | 
@@ -166,58 +166,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **recommendItemsItemIdViewedBoughtPost**
-> \Swagger\Client\Model\GenericRecommendationResponse recommendItemsItemIdViewedBoughtPost($item_id, $recommendation)
-
-
-
-Users who viewed this item also bought that recommendation
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: key
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Key', 'Bearer');
-
-$api_instance = new Swagger\Client\Api\DefaultApi();
-$item_id = "item_id_example"; // string | 
-$recommendation = new \Swagger\Client\Model\RecommendationRequest(); // \Swagger\Client\Model\RecommendationRequest | Recommendation query
-
-try {
-    $result = $api_instance->recommendItemsItemIdViewedBoughtPost($item_id, $recommendation);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->recommendItemsItemIdViewedBoughtPost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **item_id** | **string**|  |
- **recommendation** | [**\Swagger\Client\Model\RecommendationRequest**](../Model/\Swagger\Client\Model\RecommendationRequest.md)| Recommendation query |
-
-### Return type
-
-[**\Swagger\Client\Model\GenericRecommendationResponse**](../Model/GenericRecommendationResponse.md)
-
-### Authorization
-
-[key](../../README.md#key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **recommendItemsItemIdViewedViewedPost**
 > \Swagger\Client\Model\GenericRecommendationResponse recommendItemsItemIdViewedViewedPost($item_id, $recommendation)
 
@@ -253,6 +201,58 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **item_id** | **string**|  |
+ **recommendation** | [**\Swagger\Client\Model\RecommendationRequest**](../Model/\Swagger\Client\Model\RecommendationRequest.md)| Recommendation query |
+
+### Return type
+
+[**\Swagger\Client\Model\GenericRecommendationResponse**](../Model/GenericRecommendationResponse.md)
+
+### Authorization
+
+[key](../../README.md#key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **recommendItemsItemIdsBoughtBoughtPost**
+> \Swagger\Client\Model\GenericRecommendationResponse recommendItemsItemIdsBoughtBoughtPost($item_ids, $recommendation)
+
+
+
+Frequently purchased together recommendation
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: key
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Key', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\DefaultApi();
+$item_ids = "item_ids_example"; // string | 
+$recommendation = new \Swagger\Client\Model\RecommendationRequest(); // \Swagger\Client\Model\RecommendationRequest | Recommendation query
+
+try {
+    $result = $api_instance->recommendItemsItemIdsBoughtBoughtPost($item_ids, $recommendation);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->recommendItemsItemIdsBoughtBoughtPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **item_ids** | **string**|  |
  **recommendation** | [**\Swagger\Client\Model\RecommendationRequest**](../Model/\Swagger\Client\Model\RecommendationRequest.md)| Recommendation query |
 
 ### Return type

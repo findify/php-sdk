@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **count** | **int** |  | 
 **name** | **string** |  | 
 **has_children** | **bool** |  | 
-**min** | **int** |  | [optional] 
-**max** | **int** |  | [optional] 
 **from** | **int** |  | [optional] 
 **to** | **int** |  | [optional] 
 **children** | [**\Swagger\Client\Model\FacetChildValueFour[]**](FacetChildValueFour.md) |  | [optional] 
