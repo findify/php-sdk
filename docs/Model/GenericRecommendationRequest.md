@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **user** | [**\Swagger\Client\Model\User**](User.md) |  | 
 **t_client** | **int** |  | 
 **item_id** | **string** |  | [optional] 
+**item_ids** | **string[]** |  | [optional] 
 **offset** | **int** |  | [optional] 
 **log** | **bool** |  | [optional] 
 **callback** | **string** |  | [optional] 
