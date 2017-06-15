@@ -1,6 +1,6 @@
 <?php
 /**
- * Feedback
+ * RecommendationFilter
  *
  * PHP version 5
  *
@@ -32,7 +32,7 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * Feedback Class Doc Comment
+ * RecommendationFilter Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -41,25 +41,23 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Feedback implements ArrayAccess
+class RecommendationFilter implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Feedback';
+    protected static $swaggerModelName = 'RecommendationFilter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'user' => '\Swagger\Client\Model\User',
-        't_client' => 'int',
-        'log' => 'bool',
-        'callback' => 'string',
-        'event' => 'string',
-        'properties' => 'object'
+        'name' => 'string',
+        'type' => 'string',
+        'action' => 'string',
+        'values' => '\Swagger\Client\Model\RecommendationFilterValues[]'
     );
 
     public static function swaggerTypes()
@@ -72,12 +70,10 @@ class Feedback implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'user' => 'user',
-        't_client' => 't_client',
-        'log' => 'log',
-        'callback' => 'callback',
-        'event' => 'event',
-        'properties' => 'properties'
+        'name' => 'name',
+        'type' => 'type',
+        'action' => 'action',
+        'values' => 'values'
     );
 
     public static function attributeMap()
@@ -90,12 +86,10 @@ class Feedback implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'user' => 'setUser',
-        't_client' => 'setTClient',
-        'log' => 'setLog',
-        'callback' => 'setCallback',
-        'event' => 'setEvent',
-        'properties' => 'setProperties'
+        'name' => 'setName',
+        'type' => 'setType',
+        'action' => 'setAction',
+        'values' => 'setValues'
     );
 
     public static function setters()
@@ -108,12 +102,10 @@ class Feedback implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'user' => 'getUser',
-        't_client' => 'getTClient',
-        'log' => 'getLog',
-        'callback' => 'getCallback',
-        'event' => 'getEvent',
-        'properties' => 'getProperties'
+        'name' => 'getName',
+        'type' => 'getType',
+        'action' => 'getAction',
+        'values' => 'getValues'
     );
 
     public static function getters()
@@ -121,8 +113,42 @@ class Feedback implements ArrayAccess
         return self::$getters;
     }
 
+    const TYPE_TEXT = 'text';
+    const TYPE_RANGE = 'range';
+    const TYPE_CATEGORY = 'category';
+    const ACTION_EXCLUDE = 'exclude';
+    const ACTION_INCLUDE = 'include';
+    const ACTION_TOP = 'top';
+    const ACTION_BOTTOM = 'bottom';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_TEXT,
+            self::TYPE_RANGE,
+            self::TYPE_CATEGORY,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getActionAllowableValues()
+    {
+        return [
+            self::ACTION_EXCLUDE,
+            self::ACTION_INCLUDE,
+            self::ACTION_TOP,
+            self::ACTION_BOTTOM,
+        ];
+    }
     
 
     /**
@@ -137,12 +163,10 @@ class Feedback implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
-        $this->container['t_client'] = isset($data['t_client']) ? $data['t_client'] : null;
-        $this->container['log'] = isset($data['log']) ? $data['log'] : null;
-        $this->container['callback'] = isset($data['callback']) ? $data['callback'] : null;
-        $this->container['event'] = isset($data['event']) ? $data['event'] : null;
-        $this->container['properties'] = isset($data['properties']) ? $data['properties'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['action'] = isset($data['action']) ? $data['action'] : null;
+        $this->container['values'] = isset($data['values']) ? $data['values'] : null;
     }
 
     /**
@@ -153,18 +177,24 @@ class Feedback implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = array();
-        if ($this->container['user'] === null) {
-            $invalid_properties[] = "'user' can't be null";
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['t_client'] === null) {
-            $invalid_properties[] = "'t_client' can't be null";
+        if ($this->container['type'] === null) {
+            $invalid_properties[] = "'type' can't be null";
         }
-        if (($this->container['t_client'] < 0.0)) {
-            $invalid_properties[] = "invalid value for 't_client', must be bigger than or equal to 0.0.";
+        $allowed_values = array("text", "range", "category");
+        if (!in_array($this->container['type'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'type', must be one of #{allowed_values}.";
         }
 
-        if ($this->container['event'] === null) {
-            $invalid_properties[] = "'event' can't be null";
+        $allowed_values = array("exclude", "include", "top", "bottom");
+        if (!in_array($this->container['action'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'action', must be one of #{allowed_values}.";
+        }
+
+        if ($this->container['values'] === null) {
+            $invalid_properties[] = "'values' can't be null";
         }
         return $invalid_properties;
     }
@@ -177,16 +207,21 @@ class Feedback implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['user'] === null) {
+        if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['t_client'] === null) {
+        if ($this->container['type'] === null) {
             return false;
         }
-        if ($this->container['t_client'] < 0.0) {
+        $allowed_values = array("text", "range", "category");
+        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
-        if ($this->container['event'] === null) {
+        $allowed_values = array("exclude", "include", "top", "bottom");
+        if (!in_array($this->container['action'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['values'] === null) {
             return false;
         }
         return true;
@@ -194,131 +229,93 @@ class Feedback implements ArrayAccess
 
 
     /**
-     * Gets user
-     * @return \Swagger\Client\Model\User
+     * Gets name
+     * @return string
      */
-    public function getUser()
+    public function getName()
     {
-        return $this->container['user'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets user
-     * @param \Swagger\Client\Model\User $user
+     * Sets name
+     * @param string $name
      * @return $this
      */
-    public function setUser($user)
+    public function setName($name)
     {
-        $this->container['user'] = $user;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets t_client
-     * @return int
+     * Gets type
+     * @return string
      */
-    public function getTClient()
+    public function getType()
     {
-        return $this->container['t_client'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets t_client
-     * @param int $t_client
+     * Sets type
+     * @param string $type
      * @return $this
      */
-    public function setTClient($t_client)
+    public function setType($type)
     {
-
-        if ($t_client < 0.0) {
-            throw new \InvalidArgumentException('invalid value for $t_client when calling Feedback., must be bigger than or equal to 0.0.');
+        $allowed_values = array('text', 'range', 'category');
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'text', 'range', 'category'");
         }
-        $this->container['t_client'] = $t_client;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets log
-     * @return bool
-     */
-    public function getLog()
-    {
-        return $this->container['log'];
-    }
-
-    /**
-     * Sets log
-     * @param bool $log
-     * @return $this
-     */
-    public function setLog($log)
-    {
-        $this->container['log'] = $log;
-
-        return $this;
-    }
-
-    /**
-     * Gets callback
+     * Gets action
      * @return string
      */
-    public function getCallback()
+    public function getAction()
     {
-        return $this->container['callback'];
+        return $this->container['action'];
     }
 
     /**
-     * Sets callback
-     * @param string $callback
+     * Sets action
+     * @param string $action
      * @return $this
      */
-    public function setCallback($callback)
+    public function setAction($action)
     {
-        $this->container['callback'] = $callback;
+        $allowed_values = array('exclude', 'include', 'top', 'bottom');
+        if (!in_array($action, $allowed_values)) {
+            throw new \InvalidArgumentException("Invalid value for 'action', must be one of 'exclude', 'include', 'top', 'bottom'");
+        }
+        $this->container['action'] = $action;
 
         return $this;
     }
 
     /**
-     * Gets event
-     * @return string
+     * Gets values
+     * @return \Swagger\Client\Model\RecommendationFilterValues[]
      */
-    public function getEvent()
+    public function getValues()
     {
-        return $this->container['event'];
+        return $this->container['values'];
     }
 
     /**
-     * Sets event
-     * @param string $event
+     * Sets values
+     * @param \Swagger\Client\Model\RecommendationFilterValues[] $values
      * @return $this
      */
-    public function setEvent($event)
+    public function setValues($values)
     {
-        $this->container['event'] = $event;
-
-        return $this;
-    }
-
-    /**
-     * Gets properties
-     * @return object
-     */
-    public function getProperties()
-    {
-        return $this->container['properties'];
-    }
-
-    /**
-     * Sets properties
-     * @param object $properties
-     * @return $this
-     */
-    public function setProperties($properties)
-    {
-        $this->container['properties'] = $properties;
+        $this->container['values'] = $values;
 
         return $this;
     }

@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user** | [**\Swagger\Client\Model\User**](User.md) |  | 
 **t_client** | **int** |  | 
+**filters** | [**\Swagger\Client\Model\RecommendationFilter[]**](RecommendationFilter.md) |  | [optional] 
 **offset** | **int** |  | [optional] 
 **limit** | **int** |  | [optional] 
 **log** | **bool** |  | [optional] 

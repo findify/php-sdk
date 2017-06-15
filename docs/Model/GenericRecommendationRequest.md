@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **t_client** | **int** |  | 
 **item_id** | **string** |  | [optional] 
 **item_ids** | **string[]** |  | [optional] 
+**filters** | [**\Swagger\Client\Model\RecommendationFilter[]**](RecommendationFilter.md) |  | [optional] 
 **offset** | **int** |  | [optional] 
 **log** | **bool** |  | [optional] 
 **callback** | **string** |  | [optional] 

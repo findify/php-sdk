@@ -1,6 +1,6 @@
 <?php
 /**
- * Feedback
+ * RecommendationFilterValues
  *
  * PHP version 5
  *
@@ -32,7 +32,7 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * Feedback Class Doc Comment
+ * RecommendationFilterValues Class Doc Comment
  *
  * @category    Class */
 /** 
@@ -41,25 +41,22 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Feedback implements ArrayAccess
+class RecommendationFilterValues implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Feedback';
+    protected static $swaggerModelName = 'RecommendationFilter_values';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'user' => '\Swagger\Client\Model\User',
-        't_client' => 'int',
-        'log' => 'bool',
-        'callback' => 'string',
-        'event' => 'string',
-        'properties' => 'object'
+        'value' => 'string[]',
+        'from' => 'int',
+        'to' => 'int'
     );
 
     public static function swaggerTypes()
@@ -72,12 +69,9 @@ class Feedback implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'user' => 'user',
-        't_client' => 't_client',
-        'log' => 'log',
-        'callback' => 'callback',
-        'event' => 'event',
-        'properties' => 'properties'
+        'value' => 'value',
+        'from' => 'from',
+        'to' => 'to'
     );
 
     public static function attributeMap()
@@ -90,12 +84,9 @@ class Feedback implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'user' => 'setUser',
-        't_client' => 'setTClient',
-        'log' => 'setLog',
-        'callback' => 'setCallback',
-        'event' => 'setEvent',
-        'properties' => 'setProperties'
+        'value' => 'setValue',
+        'from' => 'setFrom',
+        'to' => 'setTo'
     );
 
     public static function setters()
@@ -108,12 +99,9 @@ class Feedback implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'user' => 'getUser',
-        't_client' => 'getTClient',
-        'log' => 'getLog',
-        'callback' => 'getCallback',
-        'event' => 'getEvent',
-        'properties' => 'getProperties'
+        'value' => 'getValue',
+        'from' => 'getFrom',
+        'to' => 'getTo'
     );
 
     public static function getters()
@@ -137,12 +125,9 @@ class Feedback implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
-        $this->container['t_client'] = isset($data['t_client']) ? $data['t_client'] : null;
-        $this->container['log'] = isset($data['log']) ? $data['log'] : null;
-        $this->container['callback'] = isset($data['callback']) ? $data['callback'] : null;
-        $this->container['event'] = isset($data['event']) ? $data['event'] : null;
-        $this->container['properties'] = isset($data['properties']) ? $data['properties'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
+        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
     }
 
     /**
@@ -153,19 +138,6 @@ class Feedback implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = array();
-        if ($this->container['user'] === null) {
-            $invalid_properties[] = "'user' can't be null";
-        }
-        if ($this->container['t_client'] === null) {
-            $invalid_properties[] = "'t_client' can't be null";
-        }
-        if (($this->container['t_client'] < 0.0)) {
-            $invalid_properties[] = "invalid value for 't_client', must be bigger than or equal to 0.0.";
-        }
-
-        if ($this->container['event'] === null) {
-            $invalid_properties[] = "'event' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -177,148 +149,69 @@ class Feedback implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['user'] === null) {
-            return false;
-        }
-        if ($this->container['t_client'] === null) {
-            return false;
-        }
-        if ($this->container['t_client'] < 0.0) {
-            return false;
-        }
-        if ($this->container['event'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets user
-     * @return \Swagger\Client\Model\User
+     * Gets value
+     * @return string[]
      */
-    public function getUser()
+    public function getValue()
     {
-        return $this->container['user'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets user
-     * @param \Swagger\Client\Model\User $user
+     * Sets value
+     * @param string[] $value
      * @return $this
      */
-    public function setUser($user)
+    public function setValue($value)
     {
-        $this->container['user'] = $user;
+        $this->container['value'] = $value;
 
         return $this;
     }
 
     /**
-     * Gets t_client
+     * Gets from
      * @return int
      */
-    public function getTClient()
+    public function getFrom()
     {
-        return $this->container['t_client'];
+        return $this->container['from'];
     }
 
     /**
-     * Sets t_client
-     * @param int $t_client
+     * Sets from
+     * @param int $from
      * @return $this
      */
-    public function setTClient($t_client)
+    public function setFrom($from)
     {
-
-        if ($t_client < 0.0) {
-            throw new \InvalidArgumentException('invalid value for $t_client when calling Feedback., must be bigger than or equal to 0.0.');
-        }
-        $this->container['t_client'] = $t_client;
+        $this->container['from'] = $from;
 
         return $this;
     }
 
     /**
-     * Gets log
-     * @return bool
+     * Gets to
+     * @return int
      */
-    public function getLog()
+    public function getTo()
     {
-        return $this->container['log'];
+        return $this->container['to'];
     }
 
     /**
-     * Sets log
-     * @param bool $log
+     * Sets to
+     * @param int $to
      * @return $this
      */
-    public function setLog($log)
+    public function setTo($to)
     {
-        $this->container['log'] = $log;
-
-        return $this;
-    }
-
-    /**
-     * Gets callback
-     * @return string
-     */
-    public function getCallback()
-    {
-        return $this->container['callback'];
-    }
-
-    /**
-     * Sets callback
-     * @param string $callback
-     * @return $this
-     */
-    public function setCallback($callback)
-    {
-        $this->container['callback'] = $callback;
-
-        return $this;
-    }
-
-    /**
-     * Gets event
-     * @return string
-     */
-    public function getEvent()
-    {
-        return $this->container['event'];
-    }
-
-    /**
-     * Sets event
-     * @param string $event
-     * @return $this
-     */
-    public function setEvent($event)
-    {
-        $this->container['event'] = $event;
-
-        return $this;
-    }
-
-    /**
-     * Gets properties
-     * @return object
-     */
-    public function getProperties()
-    {
-        return $this->container['properties'];
-    }
-
-    /**
-     * Sets properties
-     * @param object $properties
-     * @return $this
-     */
-    public function setProperties($properties)
-    {
-        $this->container['properties'] = $properties;
+        $this->container['to'] = $to;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * SearchRequestTest
+ * RecommendationFilterTest
  *
  * PHP version 5
  *
@@ -30,17 +30,17 @@
 namespace Swagger\Client;
 
 /**
- * SearchRequestTest Class Doc Comment
+ * RecommendationFilterTest Class Doc Comment
  *
  * @category    Class */
-// * @description SearchRequest
+// * @description RecommendationFilter
 /**
  * @package     Swagger\Client
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SearchRequestTest extends \PHPUnit_Framework_TestCase
+class RecommendationFilterTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -76,81 +76,41 @@ class SearchRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "SearchRequest"
+     * Test "RecommendationFilter"
      */
-    public function testSearchRequest()
+    public function testRecommendationFilter()
     {
 
     }
 
     /**
-     * Test attribute "q"
+     * Test attribute "name"
      */
-    public function testPropertyQ()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "user"
+     * Test attribute "type"
      */
-    public function testPropertyUser()
+    public function testPropertyType()
     {
 
     }
 
     /**
-     * Test attribute "t_client"
+     * Test attribute "action"
      */
-    public function testPropertyTClient()
+    public function testPropertyAction()
     {
 
     }
 
     /**
-     * Test attribute "filters"
+     * Test attribute "values"
      */
-    public function testPropertyFilters()
-    {
-
-    }
-
-    /**
-     * Test attribute "sort"
-     */
-    public function testPropertySort()
-    {
-
-    }
-
-    /**
-     * Test attribute "offset"
-     */
-    public function testPropertyOffset()
-    {
-
-    }
-
-    /**
-     * Test attribute "limit"
-     */
-    public function testPropertyLimit()
-    {
-
-    }
-
-    /**
-     * Test attribute "callback"
-     */
-    public function testPropertyCallback()
-    {
-
-    }
-
-    /**
-     * Test attribute "log"
-     */
-    public function testPropertyLog()
+    public function testPropertyValues()
     {
 
     }
