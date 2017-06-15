@@ -105,6 +105,8 @@ Class | Method | HTTP request | Description
  - [GenericRecommendationResponse](docs/Model/GenericRecommendationResponse.md)
  - [GenericRecommendationResponseMeta](docs/Model/GenericRecommendationResponseMeta.md)
  - [Product](docs/Model/Product.md)
+ - [RecommendationFilter](docs/Model/RecommendationFilter.md)
+ - [RecommendationFilterValues](docs/Model/RecommendationFilterValues.md)
  - [RecommendationRequest](docs/Model/RecommendationRequest.md)
  - [Redirect](docs/Model/Redirect.md)
  - [SearchRequest](docs/Model/SearchRequest.md)
