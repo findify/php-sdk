@@ -231,7 +231,7 @@ class Facet implements ArrayAccess
         if ($this->container['sort_type'] === null) {
             return false;
         }
-        $allowed_values = array("alphabetical", "count", "value");
+        $allowed_values = array("alphabetical", "count", "value", "size");
         if (!in_array($this->container['sort_type'], $allowed_values)) {
             return false;
         }
@@ -304,9 +304,9 @@ class Facet implements ArrayAccess
      */
     public function setSortType($sort_type)
     {
-        $allowed_values = array('alphabetical', 'count', 'value');
+        $allowed_values = array('alphabetical', 'count', 'value', 'size');
         if (!in_array($sort_type, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'sort_type', must be one of 'alphabetical', 'count', 'value'");
+            throw new \InvalidArgumentException("Invalid value for 'sort_type', must be one of 'alphabetical', 'count', 'value', 'size'");
         }
         $this->container['sort_type'] = $sort_type;
 
