@@ -199,7 +199,7 @@ class Facet implements ArrayAccess
         if ($this->container['sort_type'] === null) {
             $invalid_properties[] = "'sort_type' can't be null";
         }
-        $allowed_values = array("alphabetical", "count", "value");
+        $allowed_values = array("alphabetical", "count", "value", "size");
         if (!in_array($this->container['sort_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'sort_type', must be one of #{allowed_values}.";
         }
