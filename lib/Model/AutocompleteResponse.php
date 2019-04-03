@@ -56,7 +56,7 @@ class AutocompleteResponse implements ArrayAccess
     protected static $swaggerTypes = array(
         'meta' => '\Swagger\Client\Model\AutocompleteResponseMeta',
         'suggestions' => '\Swagger\Client\Model\AutocompleteSuggestion[]',
-        'items' => '\Swagger\Client\Model\Product'
+        'items' => '\Swagger\Client\Model\Product[]'
     );
 
     public static function swaggerTypes()
